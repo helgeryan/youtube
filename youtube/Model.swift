@@ -31,7 +31,18 @@ class Model {
                 return
             }
             
-            //Parsing Data 
+            do {
+                //Parsing Data
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+               
+                let response = try decoder.decode(Response.self, from: data!)
+                
+                dump(response)
+            }
+            catch {
+                
+            }
         }
         
         
