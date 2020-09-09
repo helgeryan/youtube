@@ -52,7 +52,7 @@ struct Video : Decodable {
         //Parse thumbnail
         self.thumbnail = try highContainer.decode(String.self, forKey: .thumbnail)
         
-          let resourceIdContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .high)
+        let resourceIdContainer = try snippetContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .resourceId)
         
         //Parse thumbnail
         self.videoId = try resourceIdContainer.decode(String.self, forKey: .videoId)
